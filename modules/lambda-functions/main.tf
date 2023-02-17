@@ -1,7 +1,6 @@
 data "archive_file" "lambda_archives" {
   type        = "zip"
   #source_file = var.filename
-  source_dir  = "${path.module}/cod1"
   output_path = var.filename
 }
 
