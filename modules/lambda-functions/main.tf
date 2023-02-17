@@ -1,11 +1,11 @@
 data "archive_file" "lambda_archives" {
   type        = "zip"
   source_file = var.filename
-  #output_path = var.filename
+  output_path = var.filename.zip
 }
 
 resource "aws_lambda_function" "this" {
-   filename                       =  var.filename
+   filename                       =  data.archive_file.lambda_archives.output_path
    function_name                  =  var.function_name
    role                           =  var.role_arn
    handler                        =  var.handler
