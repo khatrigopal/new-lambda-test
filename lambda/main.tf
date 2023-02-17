@@ -5,3 +5,4 @@ module "lambda_functions_1" {
   handler = "lambda_function_1.lambda_handler"
   #filename = "lambda/cod1/lambda_function_1.zip"
    filename = "${path.module}/cod1/lambda_function_1.zip"
+}
