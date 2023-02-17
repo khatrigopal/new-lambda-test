@@ -4,6 +4,7 @@ data "archive_file" "lambda_archives" {
   output_path = "var.filename/.zip"
 }
 
+
 resource "aws_lambda_function" "this" {
    filename                       =  var.filename
    function_name                  =  var.function_name
