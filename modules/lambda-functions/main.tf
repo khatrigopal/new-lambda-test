@@ -4,7 +4,7 @@ data "archive_file" "lambda_archives" {
   #output_path = "var.filename/.zip"
    output_path = "/tmp/lambda_function.zip"
    content {
-    "${var.filename}" = var.filename
+    var.filename = var.filename
   }
 }
 
