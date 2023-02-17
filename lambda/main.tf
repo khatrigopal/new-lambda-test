@@ -8,7 +8,7 @@ module "lambda_functions_1" {
 }
   
   
-module "lambda_function_2" {
+module "lambda_function_1" {
   source         = "../modules/lambda-functions"
   function_name = "lambda_function_2"
   role_arn = "arn:aws:iam::558940753150:role/lambda-full-acces"
