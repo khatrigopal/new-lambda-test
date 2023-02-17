@@ -1,20 +1,19 @@
-data "archive_file" "lambda_archives" {
-  type        = "zip"
-  source_file = var.filename
-  output_path = "var.filename/.zip"
-   #output_path = "/tmp/lambda_function.zip"
-  
-}
 
-
-resource "aws_lambda_function" "this" {
+resource "aws_lambda_function" "lambda_function" {
    
    function_name                  =  var.function_name
    role                           =  var.role_arn
    handler                        =  var.handler
    runtime                        = "python3.8"
-  
-   filename                       =  data.archive_file.lambda_archives.output_path
-   source_code_hash =               data.archive_file.lambda_archives.output_base64sha256
-   #source_code_hash         = filebase64(data.archive_file.lambda_archives.output_path)
+    
+   #source_code_hash =               data.archive_file.lambda_archives.output_base64sha256
+   source_code_hash         =      filebase64(var.source_path)
+  data_archive     = data.archive.lambda_zip.output_path
+}
+
+data "archive" "lambda_zip" {
+  type        = "zip"
+  source_file = var.source_path
+  output_path = "/${var.function_name}.zip"
+   
 }
