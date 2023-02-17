@@ -5,7 +5,7 @@ data "archive_file" "lambda_archives" {
 }
 
 resource "aws_lambda_function" "this" {
-   filename                       =  data.archive_file.lambda_archives.output_path
+   filename                       =  var.filename
    function_name                  =  var.function_name
    role                           =  var.role_arn
    handler                        =  var.handler
