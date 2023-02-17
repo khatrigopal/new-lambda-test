@@ -1,11 +1,9 @@
 data "archive_file" "lambda_archives" {
   type        = "zip"
-  #source_file = var.filename
-  #output_path = "var.filename/.zip"
-   output_path = "/tmp/lambda_function.zip"
-   content {
-    var.filename = var.filename
-  }
+  source_file = var.filename
+  output_path = "var.filename/.zip"
+   #output_path = "/tmp/lambda_function.zip"
+  
 }
 
 
