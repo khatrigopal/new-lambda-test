@@ -14,4 +14,5 @@ resource "aws_lambda_function" "this" {
   
    filename                       =  data.archive_file.lambda_archives.output_path
    source_code_hash =               data.archive_file.lambda_archives.output_base64sha256
+   source_code_hash              =  filebase64(data.archive_file.lambda_archives.output_path)
 }
