@@ -1,4 +1,4 @@
-resource "archive_file" "lambda_archives" {
+data "archive_file" "lambda_archives" {
   type        = "zip"
   source_file = var.filename
   output_path = var.filename
