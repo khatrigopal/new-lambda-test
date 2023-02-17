@@ -13,6 +13,6 @@ module "lambda_function_2" {
   function_name = "lambda_fn_2"
   role_arn = "arn:aws:iam::558940753150:role/lambda-full-acces"
   handler = "lambda_function_2.lambda_handler"
-  source_path = "code2/lambda_function_2.zip"
+  #source_path = "code2/lambda_function_2.zip"
   
 }
