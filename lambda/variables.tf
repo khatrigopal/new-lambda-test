@@ -17,4 +17,5 @@ variable "function_name" {
 
 variable "handler" {
   description = "The name of the Python function that AWS Lambda calls to start execution."
+  default = ""
 }
